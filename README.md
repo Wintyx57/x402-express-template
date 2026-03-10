@@ -76,12 +76,12 @@ No account creation. No API keys. The transaction hash is the proof of payment.
 
 ## Networks
 
-| Network      | Gas cost     | Chain ID   | USDC contract                                |
-|--------------|-------------|------------|----------------------------------------------|
-| SKALE Europa | FREE (sFUEL) | 2046399126 | `0x5F795bb52dAc3085f578f4877D450e2929D2F13d` |
-| Base         | ~$0.001      | 8453       | `0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913` |
+| Network        | Gas cost         | Chain ID     | USDC contract                                |
+|----------------|-----------------|-------------|----------------------------------------------|
+| Base           | ~$0.001          | 8453        | `0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913` |
+| SKALE on Base  | ~$0.0007 (CREDITS) | 1187947933  | `0x85889c8c714505E0c94b30fcfcF64fE3Ac8FCb20` |
 
-SKALE is recommended for AI agents because gas is zero — agents do not need native tokens to operate.
+SKALE on Base is recommended for AI agents because gas is ultra-low (~$0.0007/tx via CREDITS token).
 
 ---
 
@@ -165,5 +165,5 @@ The anti-replay store (`usedTxHashes`) is in-memory and resets on restart. For p
 
 - x402 Bazaar (marketplace): [x402bazaar.org](https://x402bazaar.org)
 - x402 protocol specification: [x402.org](https://x402.org)
-- SKALE Europa (zero-gas chain): [skale.space](https://skale.space)
+- SKALE on Base (ultra-low gas): [skale.space](https://skale.space)
 - List your API on the marketplace: `POST https://x402-api.onrender.com/api/services`
