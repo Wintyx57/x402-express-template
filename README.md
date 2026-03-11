@@ -36,6 +36,8 @@ cp .env.example .env
 # Edit .env and set WALLET_ADDRESS to your Ethereum wallet
 ```
 
+> **Need USDC?** Bridge from any chain → SKALE in 1 click: [x402bazaar.org/fund](https://x402bazaar.org/fund)
+
 **3. Start the server**
 
 ```bash
