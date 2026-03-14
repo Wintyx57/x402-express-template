@@ -4,7 +4,7 @@ Monetize any Express API with zero-gas USDC payments in under 5 minutes.
 
 ![Node.js](https://img.shields.io/badge/Node.js-18+-green)
 ![Express](https://img.shields.io/badge/Express-5.x-black)
-![USDC](https://img.shields.io/badge/USDC-Base%20%7C%20SKALE-blue)
+![USDC](https://img.shields.io/badge/USDC-Base%20%7C%20SKALE%20%7C%20Polygon-blue)
 ![License](https://img.shields.io/badge/License-MIT-yellow)
 
 Add `x402Paywall(0.05, 'description')` to any route. That is the entire integration.
@@ -82,6 +82,7 @@ No account creation. No API keys. The transaction hash is the proof of payment.
 |----------------|-----------------|-------------|----------------------------------------------|
 | Base           | ~$0.001          | 8453        | `0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913` |
 | SKALE on Base  | ~$0.0007 (CREDITS) | 1187947933  | `0x85889c8c714505E0c94b30fcfcF64fE3Ac8FCb20` |
+| Polygon        | ~$0.001 (MATIC)    | 137         | `0x3c499c542cEF5E3811e1192ce70d8cC03d5c3359` |
 
 SKALE on Base is recommended for AI agents because gas is ultra-low (~$0.0007/tx via CREDITS token).
 
