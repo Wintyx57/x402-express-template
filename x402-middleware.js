@@ -1,5 +1,5 @@
 // x402-middleware.js — Core x402 payment middleware for Express
-// Verifies USDC on-chain payments (Base or SKALE) before granting API access.
+// Verifies USDC on-chain payments (Base, SKALE on Base, or Polygon) before granting API access.
 // No Supabase, no budget manager — pure verification logic.
 
 'use strict';
@@ -18,12 +18,20 @@ const CHAINS = {
     gas: '~$0.001',
   },
   skale: {
-    rpcUrl: 'https://mainnet.skalenodes.com/v1/elated-tan-skat',
-    usdcContract: '0x5F795bb52dAc3085f578f4877D450e2929D2F13d',
-    chainId: 2046399126,
-    label: 'SKALE Europa',
-    explorer: 'https://elated-tan-skat.explorer.mainnet.skalenodes.com',
-    gas: 'FREE (sFUEL)',
+    rpcUrl: 'https://skale-base.skalenodes.com/v1/base',
+    usdcContract: '0x85889c8c714505E0c94b30fcfcF64fE3Ac8FCb20',
+    chainId: 1187947933,
+    label: 'SKALE on Base',
+    explorer: 'https://base.explorer.skalenodes.com',
+    gas: '~$0.0007 (CREDITS)',
+  },
+  polygon: {
+    rpcUrl: 'https://polygon-rpc.com',
+    usdcContract: '0x3c499c542cEF5E3811e1192ce70d8cC03d5c3359',
+    chainId: 137,
+    label: 'Polygon',
+    explorer: 'https://polygonscan.com',
+    gas: '~$0.001 (MATIC)',
   },
 };
 
@@ -74,7 +82,7 @@ function fetchWithTimeout(url, options) {
  *
  * @param {string} txHash       - 0x-prefixed 32-byte transaction hash
  * @param {number} minAmountRaw - Minimum accepted amount in USDC raw units (6 decimals)
- * @param {string} chainKey     - One of the keys in CHAINS ('base' | 'skale')
+ * @param {string} chainKey     - One of the keys in CHAINS ('base' | 'skale' | 'polygon')
  * @returns {Promise<{ valid: boolean, from: string } | false>}
  */
 async function verifyPayment(txHash, minAmountRaw, chainKey) {
